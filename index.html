@@ -161,7 +161,6 @@
         <img src="quarto2.jpeg" alt="Segundo quarto" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
         <img src="banheiro.jpeg" alt="Banheiro reformado" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
         <img src="capa.jpeg" alt="Fachada / Capa" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
-        <!-- Para adicionar mais fotos no futuro, basta copiar uma linha acima e alterar o nome do ficheiro -->
       </div>
     </div>
   </section>
@@ -273,7 +272,7 @@
       <div class="text-center mb-14">
         <div class="gold-line mx-auto mb-6"></div>
         <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Localização Estratégica</p>
-        <h2 class="serif text-3xl md:text-4xl font-semibold">Bairro São Cristóvão · Concórdia/SC</h2>
+        <h2 class="serif text-3xl md:text-4xl font-semibold">Bairro Cinquentenário · Concórdia/SC</h2>
         <p class="text-gray-500 text-sm mt-3">Condomínio Residencial Jardim das Hortênsias (Bloco E)</p>
       </div>
 
@@ -286,12 +285,12 @@
             </div>
             <h3 class="font-bold text-gray-900 text-xl mb-4">Acessibilidade & Conveniência</h3>
             <p class="text-xs text-gray-600 leading-relaxed mb-6">
-              Localização tranquila e segura no Bairro São Cristóvão, com acesso conveniente ao Centro de Concórdia, supermercados, farmácias, escolas e serviços essenciais do dia a dia.
+              Localização residencial valorizada no Bairro Cinquentenário, com acesso conveniente ao Centro de Concórdia, supermercados, farmácias, escolas e serviços do dia a dia.
             </p>
             <ul class="text-xs text-gray-700 space-y-3">
-              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Bairro com infraestrutura completa</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Bairro tranquilo e estruturado</li>
               <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Rápido deslocamento ao Centro</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Região com alta procura para locação</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Alta demanda e valorização imobiliária</li>
             </ul>
           </div>
 
@@ -301,10 +300,10 @@
           </a>
         </div>
 
-        <!-- Mapa Interativo (Google Maps) -->
+        <!-- Mapa Interativo Com Marcador Exato no Condomínio -->
         <div class="md:col-span-2 rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm min-h-[350px]">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.803878643195!2d-52.0163013!3d-27.2253818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e24294157d6051%3A0x6b4fb40ed5f8658d!2sCondom%C3%ADnio%20Residencial%20Jardim%20das%20Hort%C3%AAnsias!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.8123281535205!2d-52.0163335!3d-27.2251147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e24294157d6051%3A0x6b4fb40ed5f8658d!2sCondom%C3%ADnio%20Residencial%20Jardim%20das%20Hort%C3%AAnsias!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
             width="100%" 
             height="100%" 
             style="border:0; min-height: 380px;" 
@@ -369,7 +368,7 @@
   </section>
 
   <footer class="text-center text-gray-400 text-xs py-10 border-t border-gray-100">
-    Residencial Jardim das Hortênsias · Bairro São Cristóvão · Concórdia/SC
+    Residencial Jardim das Hortênsias · Bairro Cinquentenário · Concórdia/SC
   </footer>
 
   <!-- BOTAO FLUTUANTE -->
@@ -380,23 +379,19 @@
 
   <!-- LIGHTBOX / CARROSSEL -->
   <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[60] p-4 md:p-8" onclick="closeLightbox(event)">
-    <!-- Botão Fechar -->
     <button class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl font-light z-10 w-10 h-10 flex items-center justify-center focus:outline-none" onclick="closeLightbox(event, true)">
       <i class="fas fa-times"></i>
     </button>
 
-    <!-- Botão Anterior -->
     <button class="absolute left-3 md:left-6 text-white/80 hover:text-white text-2xl md:text-3xl z-10 bg-black/40 hover:bg-black/70 w-12 h-12 rounded-full flex items-center justify-center transition" onclick="prevImage(event)">
       <i class="fas fa-chevron-left"></i>
     </button>
 
-    <!-- Container da Imagem -->
     <div class="relative max-h-[85vh] max-w-[90vw] flex flex-col items-center justify-center">
       <img id="lightboxImg" src="" class="max-h-[80vh] max-w-full rounded-lg shadow-2xl object-contain select-none">
       <div id="lightboxCounter" class="text-white/70 text-xs md:text-sm mt-3 font-light tracking-widest"></div>
     </div>
 
-    <!-- Botão Próximo -->
     <button class="absolute right-3 md:right-6 text-white/80 hover:text-white text-2xl md:text-3xl z-10 bg-black/40 hover:bg-black/70 w-12 h-12 rounded-full flex items-center justify-center transition" onclick="nextImage(event)">
       <i class="fas fa-chevron-right"></i>
     </button>
@@ -406,7 +401,6 @@
     let imagesList = [];
     let currentIndex = 0;
 
-    // Inicializa a galeria dinamicamente
     function initGallery() {
       const images = document.querySelectorAll('.gallery-img');
       imagesList = Array.from(images).map(img => ({
@@ -425,7 +419,7 @@
       const lb = document.getElementById('lightbox');
       lb.classList.remove('hidden');
       lb.classList.add('flex');
-      document.body.style.overflow = 'hidden'; // Impede scroll ao fundo
+      document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox(e, force = false) {
@@ -459,7 +453,6 @@
       updateLightbox();
     }
 
-    // Suporte para navegação por teclado (Seta Esquerda, Seta Direita, Esc)
     document.addEventListener('keydown', (e) => {
       const lb = document.getElementById('lightbox');
       if (!lb.classList.contains('hidden')) {
@@ -469,7 +462,6 @@
       }
     });
 
-    // Suporte para gestos de deslizar em mobile (Swipe)
     let touchStartX = 0;
     let touchEndX = 0;
 
