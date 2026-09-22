@@ -142,15 +142,16 @@
         <div class="gold-line mx-auto mb-6"></div>
         <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Galeria</p>
         <h2 class="serif text-3xl md:text-4xl font-semibold">Cada ambiente, em detalhe</h2>
-        <p class="text-xs text-gray-400 mt-4">Clique em uma foto para ampliar</p>
+        <p class="text-xs text-gray-400 mt-4">Clique em uma foto para ampliar e navegar</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="galleryGrid">
-        <img src="sala.jpeg" alt="Sala de estar" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
-        <img src="cozinha.jpeg" alt="Cozinha planejada" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
-        <img src="quarto1.jpeg" alt="Quarto principal" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
-        <img src="quarto2.jpeg" alt="Segundo quarto" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
-        <img src="banheiro.jpeg" alt="Banheiro reformado" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
-        <img src="capa.jpeg" alt="Fachada / Capa" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+        <img src="sala.jpeg" alt="Sala de estar" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
+        <img src="cozinha.jpeg" alt="Cozinha planejada" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
+        <img src="quarto1.jpeg" alt="Quarto principal" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
+        <img src="quarto2.jpeg" alt="Segundo quarto" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
+        <img src="banheiro.jpeg" alt="Banheiro reformado" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
+        <img src="capa.jpeg" alt="Fachada / Capa" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm">
+        <!-- Para adicionar mais fotos no futuro, basta copiar uma linha acima e alterar o nome do ficheiro -->
       </div>
     </div>
   </section>
@@ -245,23 +246,117 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[60] p-6" onclick="closeLightbox()">
-    <img id="lightboxImg" src="" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl">
+  <!-- LIGHTBOX / CARROSSEL -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[60] p-4 md:p-8" onclick="closeLightbox(event)">
+    <!-- Botão Fechar -->
+    <button class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl font-light z-10 w-10 h-10 flex items-center justify-center focus:outline-none" onclick="closeLightbox(event, true)">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Botão Anterior -->
+    <button class="absolute left-3 md:left-6 text-white/80 hover:text-white text-2xl md:text-3xl z-10 bg-black/40 hover:bg-black/70 w-12 h-12 rounded-full flex items-center justify-center transition" onclick="prevImage(event)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Container da Imagem -->
+    <div class="relative max-h-[85vh] max-w-[90vw] flex flex-col items-center justify-center">
+      <img id="lightboxImg" src="" class="max-h-[80vh] max-w-full rounded-lg shadow-2xl object-contain select-none">
+      <div id="lightboxCounter" class="text-white/70 text-xs md:text-sm mt-3 font-light tracking-widest"></div>
+    </div>
+
+    <!-- Botão Próximo -->
+    <button class="absolute right-3 md:right-6 text-white/80 hover:text-white text-2xl md:text-3xl z-10 bg-black/40 hover:bg-black/70 w-12 h-12 rounded-full flex items-center justify-center transition" onclick="nextImage(event)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </div>
 
   <script>
-    function openLightbox(src){
-      document.getElementById('lightboxImg').src = src;
+    let imagesList = [];
+    let currentIndex = 0;
+
+    // Inicializa a galeria dinamicamente
+    function initGallery() {
+      const images = document.querySelectorAll('.gallery-img');
+      imagesList = Array.from(images).map(img => ({
+        src: img.src,
+        alt: img.alt || 'Foto do imóvel'
+      }));
+
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+      });
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
       const lb = document.getElementById('lightbox');
       lb.classList.remove('hidden');
       lb.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // Impede scroll ao fundo
     }
-    function closeLightbox(){
+
+    function closeLightbox(e, force = false) {
+      if (force || e.target.id === 'lightbox') {
+        const lb = document.getElementById('lightbox');
+        lb.classList.add('hidden');
+        lb.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    function updateLightbox() {
+      if (imagesList.length === 0) return;
+      const imgElem = document.getElementById('lightboxImg');
+      const counterElem = document.getElementById('lightboxCounter');
+
+      imgElem.src = imagesList[currentIndex].src;
+      imgElem.alt = imagesList[currentIndex].alt;
+      counterElem.innerText = `${currentIndex + 1} / ${imagesList.length}`;
+    }
+
+    function prevImage(e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length;
+      updateLightbox();
+    }
+
+    function nextImage(e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex + 1) % imagesList.length;
+      updateLightbox();
+    }
+
+    // Suporte para navegação por teclado (Seta Esquerda, Seta Direita, Esc)
+    document.addEventListener('keydown', (e) => {
       const lb = document.getElementById('lightbox');
-      lb.classList.add('hidden');
-      lb.classList.remove('flex');
+      if (!lb.classList.contains('hidden')) {
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'Escape') closeLightbox(e, true);
+      }
+    });
+
+    // Suporte para gestos de deslizar em mobile (Swipe)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const lbContainer = document.getElementById('lightbox');
+    lbContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    lbContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 40) nextImage();
+      if (touchEndX > touchStartX + 40) prevImage();
     }
+
+    document.addEventListener('DOMContentLoaded', initGallery);
   </script>
 
 </body>
