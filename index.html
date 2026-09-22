@@ -1,5 +1,6 @@
-
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H29ZTXWFMV"></script>
 <script>
@@ -9,8 +10,7 @@
 
   gtag('config', 'G-H29ZTXWFMV');
 </script>
-<html lang="pt-br">
-<head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Apartamento à Venda | Jardim das Hortênsias | Concórdia</title>
@@ -135,7 +135,7 @@
       </div>
 
       <div class="fade-up delay-3 flex flex-wrap gap-3 md:gap-4">
-        <a href="#contato" class="btn-gold px-6 md:px-8 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
+        <a href="https://wa.me/554949998111742" target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'Hero WhatsApp'});" class="btn-gold px-6 md:px-8 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
           <i class="fab fa-whatsapp mr-2"></i>Falar com o Proprietário
         </a>
         <a href="#galeria" class="border border-white/50 hover:border-white transition px-6 md:px-8 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
@@ -453,7 +453,7 @@
         Negociação direta com o proprietário, sem intermediários.<br>
         Aceita financiamento bancário e FGTS.
       </p>
-      <a href="https://wa.me/554949998111742" target="_blank"
+      <a href="https://wa.me/554949998111742" target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'CTA Final WhatsApp'});"
         class="btn-gold inline-flex items-center gap-3 px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
         <i class="fab fa-whatsapp text-lg"></i>Agendar Visita pelo WhatsApp
       </a>
@@ -465,7 +465,7 @@
   </footer>
 
   <!-- BOTAO FLUTUANTE -->
-  <a href="https://wa.me/554949998111742" target="_blank"
+  <a href="https://wa.me/554949998111742" target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'Botao Flutuante WhatsApp'});"
      class="fixed z-50 bg-green-600 hover:bg-green-700 transition text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl"
      style="bottom: calc(1.5rem + env(safe-area-inset-bottom,0px)); right: 1.5rem;">
     <i class="fab fa-whatsapp"></i>
@@ -590,7 +590,7 @@
     // Fecha o menu mobile ao rolar
     window.addEventListener('scroll', () => {
       const menu = document.getElementById('mobileMenu');
-      if (menu.classList.contains('open')) closeMenu();
+      if (menu && menu.classList.contains('open')) closeMenu();
     });
   </script>
 
