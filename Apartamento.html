@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartamento à Venda | Jardim das Hortênsias | Concórdia</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12181f; --ink-soft:#4b5563; --gold:#b98a3b; --gold-light:#e7c98a;
+    --paper:#fafaf8; --line:#e7e5e0;
+  }
+  body{ font-family:'Inter',system-ui,sans-serif; background:var(--paper); color:var(--ink); }
+  h1,h2,.serif{ font-family:'Playfair Display',serif; }
+  .fade-up{ opacity:0; transform:translateY(18px); animation:fadeUp .8s ease forwards; }
+  @keyframes fadeUp{ to{opacity:1; transform:translateY(0);} }
+  .delay-1{animation-delay:.1s} .delay-2{animation-delay:.25s} .delay-3{animation-delay:.4s}
+  .gold-line{ width:56px; height:2px; background:var(--gold); }
+  .card{ background:#fff; border:1px solid var(--line); }
+  .gallery-img{ transition:transform .5s ease, filter .5s ease; cursor:pointer; filter:saturate(0.97); }
+  .gallery-img:hover{ transform:scale(1.04); filter:saturate(1.05); }
+  .nav-link{ position:relative; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--gold); transition:width .3s ease; }
+  .nav-link:hover::after{ width:100%; }
+  .btn-primary{ background:var(--ink); color:#fff; transition:.25s ease; }
+  .btn-primary:hover{ background:#000; }
+  .btn-gold{ background:var(--gold); color:#fff; transition:.25s ease; }
+  .btn-gold:hover{ background:#a3782f; }
+  #lightbox{ backdrop-filter: blur(6px); }
+  .num{ font-family:'Playfair Display',serif; }
+  ::selection{ background:var(--gold-light); }
+</style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-40 backdrop-blur bg-white/80 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="serif text-lg font-semibold tracking-wide">Jardim das Hortênsias</span>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+        <a href="#investidor" class="nav-link">Investidor</a>
+        <a href="#ficha" class="nav-link">Ficha Técnica</a>
+      </div>
+      <a href="#contato" class="btn-gold text-sm font-semibold px-5 py-2.5 rounded-full">Agendar Visita</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative h-screen min-h-[640px] bg-cover bg-center flex items-end"
+    style="background-image: linear-gradient(180deg, rgba(10,14,20,0.25) 0%, rgba(10,14,20,0.55) 65%, rgba(10,14,20,0.85) 100%), url('fotos/capa.jpeg');">
+    <div class="max-w-6xl mx-auto px-6 pb-20 text-white w-full">
+      <p class="fade-up uppercase tracking-[0.3em] text-xs md:text-sm text-amber-200 font-semibold mb-5">
+        Concórdia · Santa Catarina
+      </p>
+      <h1 class="fade-up delay-1 text-5xl md:text-7xl leading-[1.05] mb-6 max-w-3xl">
+        Seu novo lar<br>no Jardim das Hortênsias
+      </h1>
+      <p class="fade-up delay-2 text-base md:text-lg text-gray-200 max-w-xl mb-10 font-light">
+        1º andar · reformado · totalmente mobiliado · pronto para morar ou investir
+      </p>
+      <div class="fade-up delay-3 flex flex-wrap gap-4">
+        <a href="#contato" class="btn-gold px-8 py-4 rounded-full font-semibold text-sm tracking-wide">
+          <i class="fab fa-whatsapp mr-2"></i>Falar com o Proprietário
+        </a>
+        <a href="#galeria" class="border border-white/50 hover:border-white transition px-8 py-4 rounded-full font-semibold text-sm tracking-wide">
+          Ver Fotos
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-xs tracking-widest animate-bounce">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+
+  <!-- STATS BAR -->
+  <section class="border-b border-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+      <div class="py-10 text-center px-4">
+        <p class="num text-3xl md:text-4xl font-bold text-gray-900">R$ 345 mil</p>
+        <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Valor do imóvel</p>
+      </div>
+      <div class="py-10 text-center px-4">
+        <p class="num text-3xl md:text-4xl font-bold text-gray-900">R$ 1.500</p>
+        <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Renda mensal já ativa</p>
+      </div>
+      <div class="py-10 text-center px-4">
+        <p class="num text-3xl md:text-4xl font-bold text-gray-900">59,35 m²</p>
+        <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">+ 12,50 m² de garagem</p>
+      </div>
+      <div class="py-10 text-center px-4">
+        <p class="num text-3xl md:text-4xl font-bold text-gray-900">1º andar</p>
+        <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Posição mais valorizada</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <div class="gold-line mb-6"></div>
+      <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Sobre o imóvel</p>
+      <h2 class="serif text-3xl md:text-4xl font-semibold mb-6 leading-tight">
+        Reformado, mobiliado e pronto para morar hoje mesmo
+      </h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Excelente oportunidade no Condomínio Residencial Jardim das Hortênsias, no 1º andar — o pavimento
+        mais privado e valorizado do prédio. Totalmente reformado, com piso laminado novo, pintura recente
+        e três portas internas trocadas, e entregue porteira fechada, com marcenaria sob medida em todos
+        os ambientes.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-10">
+        Ideal tanto para morar quanto para investir: o imóvel já possui contrato de locação ativo, rendendo
+        <strong class="text-gray-900">R$ 1.500,00/mês</strong> desde o primeiro dia de posse.
+      </p>
+      <div class="grid grid-cols-2 gap-y-4 text-sm text-gray-700">
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Cozinha em granito preto</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Cooktop embutido</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Painel planejado com espelho</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Sofá retrátil premium</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Mesa de vidro + cadeiras Eames</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Banheiro reformado, box preto</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Roupeiro espelhado</p>
+        <p><i class="fas fa-check text-amber-600 mr-2"></i>Vaga coberta, matrícula própria</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="fotos/sala.jpeg" alt="Sala" class="gallery-img rounded-2xl w-full h-64 object-cover col-span-2 shadow-sm">
+      <img src="fotos/cozinha.jpeg" alt="Cozinha" class="gallery-img rounded-2xl w-full h-44 object-cover shadow-sm">
+      <img src="fotos/banheiro.jpeg" alt="Banheiro" class="gallery-img rounded-2xl w-full h-44 object-cover shadow-sm">
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="bg-white border-y border-gray-100 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <div class="gold-line mx-auto mb-6"></div>
+        <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Galeria</p>
+        <h2 class="serif text-3xl md:text-4xl font-semibold">Cada ambiente, em detalhe</h2>
+        <p class="text-xs text-gray-400 mt-4">Clique em uma foto para ampliar</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="galleryGrid">
+        <img src="fotos/sala.jpeg" alt="Sala de estar" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+        <img src="fotos/cozinha.jpeg" alt="Cozinha planejada" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+        <img src="fotos/copa.jpeg" alt="Sala de jantar" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+        <img src="fotos/quarto1.jpeg" alt="Quarto principal" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+        <img src="fotos/quarto2.jpeg" alt="Segundo quarto" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+        <img src="fotos/banheiro.jpeg" alt="Banheiro reformado" class="gallery-img w-full h-56 object-cover rounded-xl shadow-sm" onclick="openLightbox(this.src)">
+      </div>
+      <p class="text-xs text-gray-400 mt-6 text-center">
+        Substitua os arquivos na pasta <code class="bg-gray-100 px-1 rounded">fotos/</code> pelos mesmos nomes, ou ajuste os caminhos <code class="bg-gray-100 px-1 rounded">src</code> no código.
+      </p>
+    </div>
+  </section>
+
+  <!-- INVESTIDOR -->
+  <section id="investidor" class="py-24" style="background:var(--ink);">
+    <div class="max-w-6xl mx-auto px-6 text-white">
+      <div class="gold-line mb-6"></div>
+      <p class="uppercase tracking-widest text-xs text-amber-200 font-semibold mb-3">Para investidores</p>
+      <h2 class="serif text-3xl md:text-4xl font-semibold mb-6 max-w-xl">
+        Renda imediata, sem vacância e sem obra
+      </h2>
+      <p class="text-gray-300 max-w-2xl mb-14 leading-relaxed">
+        O imóvel já está locado, gerando receita desde o primeiro dia de compra — sem o custo ou o tempo
+        de mobiliar, reformar ou buscar um inquilino.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-white/15 rounded-2xl p-8">
+          <p class="num text-3xl font-bold mb-2 text-amber-200">R$ 345.000</p>
+          <p class="text-sm text-gray-400">Valor de aquisição</p>
+        </div>
+        <div class="border border-white/15 rounded-2xl p-8">
+          <p class="num text-3xl font-bold mb-2 text-amber-200">R$ 1.500 / mês</p>
+          <p class="text-sm text-gray-400">Aluguel já contratado</p>
+        </div>
+        <div class="border border-white/15 rounded-2xl p-8">
+          <p class="num text-3xl font-bold mb-2 text-amber-200">Dia 1</p>
+          <p class="text-sm text-gray-400">Início do retorno, desde a posse</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FICHA TECNICA -->
+  <section id="ficha" class="max-w-6xl mx-auto px-6 py-24">
+    <div class="text-center mb-14">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Detalhes</p>
+      <h2 class="serif text-3xl md:text-4xl font-semibold">Ficha Técnica</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-5 max-w-3xl mx-auto text-gray-700">
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Área privativa</span><span class="font-medium">59,35 m²</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Garagem coberta</span><span class="font-medium">12,50 m² (matrícula própria)</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Dormitórios</span><span class="font-medium">2</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Banheiros</span><span class="font-medium">1</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Andar</span><span class="font-medium">1º andar</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Mobília</span><span class="font-medium">100% incluída</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Matrícula do apartamento</span><span class="font-medium">nº 10.723</span>
+      </div>
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <span class="text-gray-400 text-sm">Matrícula da vaga</span><span class="font-medium">nº 10.839</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="contato" class="bg-white border-t border-gray-100 py-24">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Investimento</p>
+      <p class="num text-5xl md:text-6xl font-bold mb-4">R$ 345.000</p>
+      <p class="text-gray-500 mb-10">
+        Negociação direta com o proprietário, sem intermediários.<br>
+      </p>
+      <a href="https://wa.me/554949998111742" target="_blank"
+        class="btn-gold inline-flex items-center gap-3 px-10 py-4 rounded-full font-semibold text-sm tracking-wide">
+        <i class="fab fa-whatsapp text-lg"></i>Agendar Visita pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer class="text-center text-gray-400 text-xs py-10 border-t border-gray-100">
+    Residencial Jardim das Hortênsias · Bairro São Cristóvão · Concórdia/SC
+  </footer>
+
+  <!-- BOTAO FLUTUANTE -->
+  <a href="https://wa.me/554949998111742" target="_blank"
+     class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 transition text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[60] p-6" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl">
+  </div>
+
+  <script>
+    function openLightbox(src){
+      document.getElementById('lightboxImg').src = src;
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+    }
+    function closeLightbox(){
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+    }
+  </script>
+
+</body>
+</html>
