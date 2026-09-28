@@ -16,11 +16,13 @@
 <title>Apartamento à Venda | Jardim das Hortênsias | Concórdia</title>
 
 <!-- Meta Tags Open Graph para Preview no WhatsApp e Redes Sociais -->
-<meta property="og:title" content="Apartamento 100% Mobiliado e Reformado em Concórdia/SC">
-<meta property="og:description" content="1º Andar · Porteira Fechada · R$ 345.000 · Direto com Proprietário">
+<meta name="description" content="Apartamento de 2 quartos, reformado e 100% mobiliado em Concórdia/SC. 59,35 m², 1º andar, garagem coberta e porteira fechada por R$ 345.000.">
+<meta property="og:title" content="Apartamento de 2 quartos, reformado e mobiliado em Concórdia/SC">
+<meta property="og:description" content="59,35 m² · 1º andar · Porteira fechada · R$ 345.000 · Venda direta">
 <meta property="og:image" content="https://alison18groto-pixel.github.io/apartamento201/capa.jpeg">
 <meta property="og:url" content="https://alison18groto-pixel.github.io/apartamento201/">
 <meta property="og:type" content="website">
+<link rel="preload" as="image" href="capa.jpeg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2312181f'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23b98a3b' font-family='Georgia,serif'%3EH%3C/text%3E%3C/svg%3E">
 
@@ -65,6 +67,11 @@
 
   /* Preço fixo no hero, fluido no mobile */
   .price-pill{ backdrop-filter: blur(8px); }
+  .mobile-cta{ display:none; }
+  @media (max-width: 767px){
+    .mobile-cta{ display:flex; }
+    body{ padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px)); }
+  }
 
   @media (max-width: 767px){
     .num{ font-size: 2.1rem !important; }
@@ -122,10 +129,10 @@
         Concórdia · Santa Catarina
       </p>
       <h1 class="fade-up delay-1 text-4xl sm:text-5xl md:text-7xl leading-[1.08] md:leading-[1.05] mb-5 md:mb-6 max-w-3xl">
-        Seu novo lar<br>no Jardim das Hortênsias
+        Apartamento de 2 quartos,<br>reformado e mobiliado
       </h1>
       <p class="fade-up delay-2 text-sm md:text-lg text-gray-200 max-w-xl mb-6 md:mb-8 font-light">
-        1º andar · reformado · totalmente mobiliado · pronto para morar ou investir
+        Jardim das Hortênsias, Concórdia/SC · 59,35 m² · 1º andar · porteira fechada
       </p>
 
       <!-- Preço em destaque, visível logo de cara -->
@@ -135,7 +142,7 @@
       </div>
 
       <div class="fade-up delay-3 flex flex-wrap gap-3 md:gap-4">
-        <a href="https://wa.me/554949998111742" target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'Hero WhatsApp'});" class="btn-gold px-6 md:px-8 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
+        <a href="https://wa.me/554949998111742?text=Ol%C3%A1!%20Vi%20o%20apartamento%20do%20Jardim%20das%20Hort%C3%AAnsias%20em%20Conc%C3%B3rdia%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita." target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'Hero WhatsApp'});" class="btn-gold px-6 md:px-8 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
           <i class="fab fa-whatsapp mr-2"></i>Falar com o Proprietário
         </a>
         <a href="#galeria" class="border border-white/50 hover:border-white transition px-6 md:px-8 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
@@ -165,7 +172,7 @@
       </div>
       <div class="py-8 md:py-10 text-center px-3 md:px-4">
         <p class="num text-2xl md:text-4xl font-bold text-gray-900">1º andar</p>
-        <p class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-2">Posição mais valorizada</p>
+        <p class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-2">Acesso facilitado</p>
       </div>
     </div>
   </section>
@@ -179,14 +186,14 @@
         Reformado, mobiliado e pronto para morar hoje mesmo
       </h2>
       <p class="text-gray-600 leading-relaxed mb-5 md:mb-6 text-sm md:text-base">
-        Excelente oportunidade no Condomínio Residencial Jardim das Hortênsias, no 1º andar — o pavimento
-        mais privado e valorizado do prédio. Totalmente reformado, com piso laminado novo, pintura recente
-        e três portas internas trocadas, e entregue porteira fechada, com marcenaria sob medida em todos
-        os ambientes.
+        Apartamento no Condomínio Residencial Jardim das Hortênsias, no 1º andar, com acesso facilitado.
+        Foi reformado com piso laminado novo, pintura recente e três portas internas trocadas. É vendido
+        porteira fechada, com marcenaria sob medida e os móveis descritos nesta página.
       </p>
       <p class="text-gray-600 leading-relaxed mb-8 md:mb-10 text-sm md:text-base">
-        Ideal tanto para morar quanto para investir: o imóvel já possui contrato de locação ativo, rendendo
-        <strong class="text-gray-900">R$ 1.500,00/mês</strong> desde o primeiro dia de posse.
+        Pode ser uma opção para morar ou investir. O imóvel está atualmente locado por
+        <strong class="text-gray-900">R$ 1.500,00/mês</strong>. As condições de transferência, prazo e demais
+        detalhes do contrato de locação devem ser confirmados na negociação.
       </p>
       <div class="grid grid-cols-2 gap-y-3 md:gap-y-4 text-xs md:text-sm text-gray-700">
         <p><i class="fas fa-check text-amber-600 mr-2"></i>Cozinha em granito preto</p>
@@ -213,22 +220,22 @@
           <div class="w-10 h-10 rounded-full bg-white text-amber-700 flex items-center justify-center mb-3 text-base shadow-sm">
             <i class="fas fa-handshake"></i>
           </div>
-          <h3 class="font-bold text-sm md:text-base mb-1">Sem comissão de imobiliária</h3>
-          <p class="text-xs md:text-sm text-gray-600">Negociação 100% direta com o proprietário — o valor que você paga é o valor que conta, sem taxas escondidas.</p>
+          <h3 class="font-bold text-sm md:text-base mb-1">Venda direta com o proprietário</h3>
+          <p class="text-xs md:text-sm text-gray-600">Sem comissão de intermediação imobiliária. ITBI, cartório, financiamento e demais custos legais, quando aplicáveis, devem ser considerados pelo comprador.</p>
         </div>
         <div>
           <div class="w-10 h-10 rounded-full bg-white text-amber-700 flex items-center justify-center mb-3 text-base shadow-sm">
             <i class="fas fa-bolt"></i>
           </div>
-          <h3 class="font-bold text-sm md:text-base mb-1">Negociação mais ágil</h3>
-          <p class="text-xs md:text-sm text-gray-600">Fale direto com quem decide. Sem intermediários, sem espera por retorno de corretor.</p>
+          <h3 class="font-bold text-sm md:text-base mb-1">Atendimento direto</h3>
+          <p class="text-xs md:text-sm text-gray-600">Fale diretamente com o proprietário para tirar dúvidas, consultar documentos e combinar uma visita.</p>
         </div>
         <div>
           <div class="w-10 h-10 rounded-full bg-white text-amber-700 flex items-center justify-center mb-3 text-base shadow-sm">
             <i class="fas fa-file-invoice-dollar"></i>
           </div>
           <h3 class="font-bold text-sm md:text-base mb-1">Aceita financiamento e FGTS</h3>
-          <p class="text-xs md:text-sm text-gray-600">Documentação em dia e pronta para agilizar a aprovação do seu banco.</p>
+          <p class="text-xs md:text-sm text-gray-600">Aceita financiamento bancário e FGTS, sujeito à análise do comprador e às regras da instituição financeira.</p>
         </div>
       </div>
     </div>
@@ -337,11 +344,12 @@
       <div class="gold-line mb-5 md:mb-6"></div>
       <p class="uppercase tracking-widest text-xs text-amber-200 font-semibold mb-3">Para investidores</p>
       <h2 class="serif text-2xl sm:text-3xl md:text-4xl font-semibold mb-5 md:mb-6 max-w-xl">
-        Renda imediata, sem vacância e sem obra
+        Imóvel atualmente locado
       </h2>
       <p class="text-gray-300 max-w-2xl mb-10 md:mb-14 leading-relaxed text-sm md:text-base">
-        O imóvel já está locado, gerando receita desde o primeiro dia de compra — sem o custo ou o tempo
-        de mobiliar, reformar ou buscar um inquilino.
+        O aluguel atual é de R$ 1.500 por mês. Sobre o preço de R$ 345.000, isso representa um rendimento
+        bruto estimado de aproximadamente 5,2% ao ano, antes de condomínio, IPTU, manutenção, impostos,
+        seguro e eventual vacância. A transferência e as condições do contrato devem ser confirmadas na negociação.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div class="border border-white/15 rounded-2xl p-6 md:p-8">
@@ -353,8 +361,8 @@
           <p class="text-xs md:text-sm text-gray-400">Aluguel já contratado</p>
         </div>
         <div class="border border-white/15 rounded-2xl p-6 md:p-8">
-          <p class="num text-2xl md:text-3xl font-bold mb-2 text-amber-200">Dia 1</p>
-          <p class="text-xs md:text-sm text-gray-400">Início do retorno, desde a posse</p>
+          <p class="num text-2xl md:text-3xl font-bold mb-2 text-amber-200">5,2%</p>
+          <p class="text-xs md:text-sm text-gray-400">Rendimento bruto anual estimado</p>
         </div>
       </div>
     </div>
@@ -383,7 +391,7 @@
             <ul class="text-xs text-gray-700 space-y-3">
               <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Bairro tranquilo e estruturado</li>
               <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Rápido deslocamento ao Centro</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Alta demanda e valorização imobiliária</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Serviços e comércio no entorno</li>
             </ul>
           </div>
 
@@ -434,12 +442,15 @@
         <span class="text-gray-400 text-xs md:text-sm">Mobília</span><span class="font-medium text-sm md:text-base">100% incluída</span>
       </div>
       <div class="flex items-center justify-between border-b border-gray-100 pb-3">
-        <span class="text-gray-400 text-xs md:text-sm">Matrícula do apartamento</span><span class="font-medium text-sm md:text-base">nº 10.723</span>
+        <span class="text-gray-400 text-xs md:text-sm">Documentação</span><span class="font-medium text-sm md:text-base">Disponível para análise</span>
       </div>
       <div class="flex items-center justify-between border-b border-gray-100 pb-3">
-        <span class="text-gray-400 text-xs md:text-sm">Matrícula da vaga</span><span class="font-medium text-sm md:text-base">nº 10.839</span>
+        <span class="text-gray-400 text-xs md:text-sm">Condomínio e IPTU</span><span class="font-medium text-sm md:text-base">Consulte os valores atualizados</span>
       </div>
     </div>
+    <p class="text-center text-xs text-gray-400 mt-8 max-w-2xl mx-auto">
+      A documentação do imóvel e da vaga pode ser apresentada para análise durante a negociação.
+    </p>
   </section>
 
   <!-- CTA FINAL -->
@@ -449,10 +460,11 @@
       <p class="uppercase tracking-widest text-xs text-gray-400 font-semibold mb-3">Investimento</p>
       <p class="num text-4xl sm:text-5xl md:text-6xl font-bold mb-3 md:mb-4">R$ 345.000</p>
       <p class="text-gray-500 mb-8 md:mb-10 text-sm md:text-base">
-        Negociação direta com o proprietário, sem intermediários.<br>
-        Aceita financiamento bancário e FGTS.
+        Venda direta com o proprietário, sem comissão de intermediação.<br>
+        Aceita financiamento bancário e FGTS, sujeito à análise do banco.<br>
+        <span class="text-xs text-gray-400">Custos de ITBI, cartório e financiamento, quando aplicáveis, não estão incluídos.</span>
       </p>
-      <a href="https://wa.me/554949998111742" target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'CTA Final WhatsApp'});"
+      <a href="https://wa.me/554949998111742?text=Ol%C3%A1!%20Vi%20o%20apartamento%20do%20Jardim%20das%20Hort%C3%AAnsias%20em%20Conc%C3%B3rdia%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita." target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'CTA Final WhatsApp'});"
         class="btn-gold inline-flex items-center gap-3 px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold text-xs md:text-sm tracking-wide">
         <i class="fab fa-whatsapp text-lg"></i>Agendar Visita pelo WhatsApp
       </a>
@@ -464,10 +476,18 @@
   </footer>
 
   <!-- BOTAO FLUTUANTE -->
-  <a href="https://wa.me/554949998111742" target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'Botao Flutuante WhatsApp'});"
+  <a href="https://wa.me/554949998111742?text=Ol%C3%A1!%20Vi%20o%20apartamento%20do%20Jardim%20das%20Hort%C3%AAnsias%20em%20Conc%C3%B3rdia%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita." target="_blank" onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'Botao Flutuante WhatsApp'});"
      class="fixed z-50 bg-green-600 hover:bg-green-700 transition text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl"
      style="bottom: calc(1.5rem + env(safe-area-inset-bottom,0px)); right: 1.5rem;">
     <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- CTA FIXO NO CELULAR -->
+  <a href="https://wa.me/554949998111742?text=Ol%C3%A1!%20Vi%20o%20apartamento%20do%20Jardim%20das%20Hort%C3%AAnsias%20em%20Conc%C3%B3rdia%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita." target="_blank"
+     onclick="gtag('event', 'click', {'event_category': 'Contato', 'event_label': 'CTA Fixo Mobile WhatsApp'});"
+     class="mobile-cta fixed bottom-0 left-0 right-0 z-40 items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-3 font-semibold text-sm shadow-2xl"
+     style="padding-bottom:calc(.75rem + env(safe-area-inset-bottom,0px));">
+    <i class="fab fa-whatsapp text-lg"></i> Falar sobre o apartamento · R$ 345.000
   </a>
 
   <!-- LIGHTBOX / CARROSSEL -->
