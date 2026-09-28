@@ -200,9 +200,8 @@
       </div>
     </div>
     <div class="grid grid-cols-2 gap-3 md:gap-4">
-      <img src="capa.jpeg" alt="Fachada" loading="lazy" class="gallery-img rounded-2xl w-full h-52 md:h-64 object-cover col-span-2 shadow-sm">
-      <img src="quarto1.jpeg" alt="Quarto principal" loading="lazy" class="gallery-img rounded-2xl w-full h-36 md:h-44 object-cover shadow-sm">
-      <img src="cozinha.jpeg" alt="Cozinha planejada" loading="lazy" class="gallery-img rounded-2xl w-full h-36 md:h-44 object-cover shadow-sm">
+      <img src="sala%201.jpeg" alt="Sala de estar" loading="lazy" onclick="openLightbox(0)" class="gallery-img rounded-2xl w-full aspect-[3/4] object-cover shadow-sm">
+      <img src="Cozinha%201.jpeg" alt="Cozinha planejada" loading="lazy" onclick="openLightbox(3)" class="gallery-img rounded-2xl w-full aspect-[3/4] object-cover shadow-sm mt-8 md:mt-12">
     </div>
   </section>
 
@@ -245,12 +244,21 @@
         <p class="text-xs text-gray-400 mt-4">Toque em uma foto para ampliar e navegar</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" id="galleryGrid">
-        <img src="sala.jpeg" alt="Sala de estar" loading="lazy" class="gallery-img w-full h-40 sm:h-56 object-cover rounded-xl shadow-sm">
-        <img src="cozinha.jpeg" alt="Cozinha planejada" loading="lazy" class="gallery-img w-full h-40 sm:h-56 object-cover rounded-xl shadow-sm">
-        <img src="quarto1.jpeg" alt="Quarto principal" loading="lazy" class="gallery-img w-full h-40 sm:h-56 object-cover rounded-xl shadow-sm">
-        <img src="quarto2.jpeg" alt="Segundo quarto" loading="lazy" class="gallery-img w-full h-40 sm:h-56 object-cover rounded-xl shadow-sm">
-        <img src="banheiro.jpeg" alt="Banheiro reformado" loading="lazy" class="gallery-img w-full h-40 sm:h-56 object-cover rounded-xl shadow-sm">
-        <img src="capa.jpeg" alt="Fachada / Capa" loading="lazy" class="gallery-img w-full h-40 sm:h-56 object-cover rounded-xl shadow-sm">
+        <img src="sala%201.jpeg" alt="Sala de estar" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="sala%203.jpeg" alt="Sala de estar e painel" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="sala%205.jpeg" alt="Sala e corredor" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Cozinha%201.jpeg" alt="Cozinha planejada" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Cozinha%202.jpeg" alt="Cozinha e bancada" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="cozinha%203.jpeg" alt="Cozinha e sala de jantar" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="quarto%201.jpeg" alt="Quarto principal" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="quarto%202.jpeg" alt="Quarto principal e roupeiro" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="quarto%205.jpeg" alt="Quarto principal, roupeiro espelhado" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="quarto%2010.jpeg" alt="Segundo quarto" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Banheiro%201.jpeg" alt="Banheiro reformado" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Banheiro%202.jpeg" alt="Banheiro com box de vidro" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Lavanderia.jpeg" alt="Área de serviço" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Area.jpeg" alt="Sacada" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
+        <img src="Areea%202.jpeg" alt="Vista da sacada" loading="lazy" class="gallery-img w-full aspect-[4/5] md:aspect-[3/4] object-cover rounded-xl shadow-sm">
       </div>
     </div>
   </section>
@@ -303,7 +311,7 @@
           <ul class="text-xs text-gray-600 space-y-2">
             <li>• 2 camas de casal</li>
             <li>• Roupeiro branco com espelho central</li>
-            <li>• Cômoda de apoio sob medida</li>
+            <li>• Segundo roupeiro maderado</li>
           </ul>
         </div>
 
@@ -499,7 +507,7 @@
     let currentIndex = 0;
 
     function initGallery() {
-      const images = document.querySelectorAll('.gallery-img');
+      const images = document.querySelectorAll('#galleryGrid .gallery-img');
       imagesList = Array.from(images).map(img => ({
         src: img.src,
         alt: img.alt || 'Foto do imóvel'
